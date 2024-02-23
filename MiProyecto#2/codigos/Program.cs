@@ -1,4 +1,4 @@
-﻿int num1, num2, num3;
+﻿int num1;
 bool error = true;
 Console.WriteLine("Hola Amigo!");
 Console.WriteLine("Este es un programa para ver cual de los 3 numeros es el mayor");
@@ -6,29 +6,18 @@ while (error)
 {
     try
     {
-        Console.WriteLine("Por favor ingresa el primer numero:");
+        Console.WriteLine("Porfavor ingrese un numero:");
         num1 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Por favor ingresa el segundo numero:");
-        num2 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Por favor ingresa el tercer numero:");
-        num3 = int.Parse(Console.ReadLine());
-        if (num1 > num2 && num1 > num3)
+
+        if (num1 % 2 == 0)
         {
-            Console.WriteLine("El numero " + num1 + " es el mayor.");
+            Console.WriteLine("El numero ingresado es PAR");
         }
-        else if (num2 > num1 && num2 > num3)
+        else
         {
-            Console.WriteLine("El numero " + num2 + " es el mayor.");
+            Console.WriteLine("El numero ingresado es IMPAR");
         }
-        else if ((num3 > num2) && (num3 > num1))
-        {
-            Console.WriteLine("El numero " + num3 + " es el mayor.");
-        }
-        else 
-        {
-            Console.WriteLine("Todos son iguales");
-        }
-        error= false;
+        error = false;
     }
     catch (Exception ex)
     {
