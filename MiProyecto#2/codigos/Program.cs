@@ -1,29 +1,33 @@
-﻿int num1;
-bool error = true;
-Console.WriteLine("Hola Amigo!");
-Console.WriteLine("Este es un programa para Convertir un Número de Letra a Número");
-Console.Write("Ingrese un número del 1 al 5 en letra (\"uno\", \"dos\", \"tres\", \"cuatro\", \"cinco\"): ");
-string numeroLetra = Console.ReadLine().ToLower(); 
-int numero;
-switch (numeroLetra)
+﻿Console.WriteLine("Hola Amigo!");
+Console.WriteLine("Este es un programa para ver el dia de la semana a partir de un numero");
+Console.Write("Ingrese un número del 1 al 7: ");
+int numeroDia = Convert.ToInt32(Console.ReadLine());
+string diaSemana;
+switch (numeroDia)
 {
-    case "uno":
-        numero = 1;
+    case 1:
+        diaSemana = "Lunes";
         break;
-    case "dos":
-        numero = 2;
+    case 2:
+        diaSemana = "Martes";
         break;
-    case "tres":
-        numero = 3;
+    case 3:
+        diaSemana = "Miércoles";
         break;
-    case "cuatro":
-        numero = 4;
+    case 4:
+        diaSemana = "Jueves";
         break;
-    case "cinco":
-        numero = 5;
+    case 5:
+        diaSemana = "Viernes";
+        break;
+    case 6:
+        diaSemana = "Sábado";
+        break;
+    case 7:
+        diaSemana = "Domingo";
         break;
     default:
-        Console.WriteLine("Número de letra no válido.");
+        Console.WriteLine("Número no válido. Debe ser un número del 1 al 7.");
         return;
 }
-Console.WriteLine($"El número en dígito es: " +numero);
+Console.WriteLine($"El día correspondiente al número "+numeroDia +" es: " + diaSemana);
