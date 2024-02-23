@@ -1,33 +1,27 @@
 ﻿Console.WriteLine("Hola Amigo!");
-Console.WriteLine("Este es un programa para ver el dia de la semana a partir de un numero");
-Console.Write("Ingrese un número del 1 al 7: ");
-int numeroDia = Convert.ToInt32(Console.ReadLine());
-string diaSemana;
-switch (numeroDia)
+Console.WriteLine("Este es un programa para Calcular el Importe por Servicio");
+Console.WriteLine("Tipos de servicio disponibles:");
+Console.WriteLine("1. Lavado de auto");
+Console.WriteLine("2. Cambio de aceite");
+Console.WriteLine("3. Revisión mecánica");
+Console.Write("Ingrese el número correspondiente al tipo de servicio: ");
+int opcion = Convert.ToInt32(Console.ReadLine());
+
+double importe = 0;
+switch (opcion)
 {
     case 1:
-        diaSemana = "Lunes";
+        importe = 25.00;
         break;
     case 2:
-        diaSemana = "Martes";
+        importe = 50.00;
         break;
     case 3:
-        diaSemana = "Miércoles";
-        break;
-    case 4:
-        diaSemana = "Jueves";
-        break;
-    case 5:
-        diaSemana = "Viernes";
-        break;
-    case 6:
-        diaSemana = "Sábado";
-        break;
-    case 7:
-        diaSemana = "Domingo";
+        importe = 100.00;
         break;
     default:
-        Console.WriteLine("Número no válido. Debe ser un número del 1 al 7.");
+        Console.WriteLine("Opción no válida.");
         return;
 }
-Console.WriteLine($"El día correspondiente al número "+numeroDia +" es: " + diaSemana);
+
+Console.WriteLine($"El importe a pagar por el servicio seleccionado es: " + importe);
