@@ -1,34 +1,21 @@
-﻿int num1, num2, num3;
-bool error = true;
-Console.WriteLine("Hola Amigo!");
-Console.WriteLine("Este es un programa para ver cual de los 3 numeros es el mayor");
+﻿bool error = true;
+int num1;
+Console.WriteLine("Bienvenido al Club **Los 3 Tiempos**");
 while (error)
 {
     try
     {
-        Console.WriteLine("Por favor ingresa el primer numero:");
+        Console.WriteLine("Porfavor ingrese su edad:");
         num1 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Por favor ingresa el segundo numero:");
-        num2 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Por favor ingresa el tercer numero:");
-        num3 = int.Parse(Console.ReadLine());
-        if (num1 > num2 && num1 > num3)
+        if (num1 >= 18)
         {
-            Console.WriteLine("El numero " + num1 + " es el mayor.");
+            Console.WriteLine("BIENVENIDO! Puede ingresar.");
         }
-        else if (num2 > num1 && num2 > num3)
+        else
         {
-            Console.WriteLine("El numero " + num2 + " es el mayor.");
+            Console.WriteLine("No puedes entrar, lastima :/");
         }
-        else if ((num3 > num2) && (num3 > num1))
-        {
-            Console.WriteLine("El numero " + num3 + " es el mayor.");
-        }
-        else 
-        {
-            Console.WriteLine("Todos son iguales");
-        }
-        error= false;
+        error = false;
     }
     catch (Exception ex)
     {
