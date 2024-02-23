@@ -1,7 +1,7 @@
 ﻿int num1;
 bool error = true;
 Console.WriteLine("Hola Amigo!");
-Console.WriteLine("Este es un programa para ver cual de los 3 numeros es el mayor");
+Console.WriteLine("Este es un programa para ver si su numero es PAR o IMPAR");
 while (error)
 {
     try
