@@ -1,26 +1,37 @@
-﻿Console.WriteLine("Seleccione su idioma de preferencia:");
-Console.WriteLine("1. Español");
-Console.WriteLine("2. Inglés");
-Console.WriteLine("3. Francés");
-Console.Write("Ingrese el número correspondiente a su idioma: ");
-int opcion = Convert.ToInt32(Console.ReadLine());
+﻿int calificacion;
+Console.WriteLine("Ingresa la calificación del examen:");
 
-string mensajeBienvenida;
-
-switch (opcion)
+if (!int.TryParse(Console.ReadLine(), out calificacion))
 {
-    case 1:
-        mensajeBienvenida = "¡Hola amigo!";
-        break;
-    case 2: // Inglés
-        mensajeBienvenida = "Hello, My friend!";
-        break;
-    case 3: // Francés
-        mensajeBienvenida = "Bonjour, mon ami!";
-        break;
-    default:
-        Console.WriteLine("無效選項 (Opción no válida).");
-        return;
+    Console.WriteLine("Error: ¡La calificación ingresada no es válida!");
+    return;
 }
 
-Console.WriteLine(mensajeBienvenida);
+switch (calificacion)
+{
+    case int n when (n >= 90 && n < 100):
+        Console.WriteLine("Tu Calificación es Sobresaliente, *Felicidades amigo*");
+        break;
+    case int n when (n >= 80 && n < 90):
+        Console.WriteLine("Tu Calificación es: Notable, *Bien hecho amigo*");
+        break;
+    case int n when (n >= 70 && n < 80):
+        Console.WriteLine("Tu Calificación es: Aprobatoria, *Echale mas ganas la proxima*");
+        break;
+    case int n when (n >= 60 && n < 70):
+        Console.WriteLine("Tu Calificación es: No aprobatoria, *Casi!! Por poco :/*");
+        break;
+    case int n when (n == 100):
+        Console.WriteLine("**CAlIFICACION COMPLETA**");
+        Console.WriteLine("**ERES EL EXITO AMIGO**");
+        break;
+    case int n when (n > 0 && n < 60):
+        Console.WriteLine("*No estuviste ni cerca, pilas para la proxima!!*");
+        break;
+    case int n when (n == 0):
+        Console.WriteLine("*En serio lo intentaste si quiera??*");
+        break;
+    default:
+        Console.WriteLine("Error: ¡La calificación no está dentro del rango válido!");
+        break;
+}
