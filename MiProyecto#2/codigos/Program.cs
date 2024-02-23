@@ -1,24 +1,26 @@
-﻿Double num1, num2, num3; 
+﻿string usuario, contra; 
 bool error = true;
 Console.WriteLine("Hola Amigo!");
-Console.WriteLine("Este es un programa para ver el precio de su producto");
+Console.WriteLine("Deseas iniciar sesion?");
 while (error)
 {
     try
     {
-        Console.WriteLine("Porfavor ingrese el precio de su producto:");
-        num1 = double.Parse(Console.ReadLine());
-        if (num1 > 100)
+        Console.WriteLine("Porfavor ingrese su usuario:");
+        usuario = Console.ReadLine();
+        usuario = usuario.ToUpper();
+        Console.WriteLine("Porfavor ingrese su Contraseña:");
+        contra = Console.ReadLine();
+        contra = contra.ToUpper();
+        if (usuario == "USUARIO" && contra == "CONTRASEÑA")
         {
-            num2 = num1 * 0.10;
-            num3 = num1 - num2;
-
-            Console.WriteLine("El precio de su producto es de: " + num3);
+            Console.WriteLine("Contraseña y usuario correctos, puede ingrear.");
         }
         else
         {
-            Console.WriteLine("El precio de su producto es de: " + num1);
+            Console.WriteLine("Su contraseña y/o usuarios son incorrectos, agreguelos nuevamente");
         }
+
 
         error = false;
     }
