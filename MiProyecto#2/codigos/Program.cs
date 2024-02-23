@@ -1,34 +1,26 @@
-﻿int num1, num2, num3;
+﻿Double num1, num2, num3; 
 bool error = true;
 Console.WriteLine("Hola Amigo!");
-Console.WriteLine("Este es un programa para ver cual de los 3 numeros es el mayor");
+Console.WriteLine("Este es un programa para ver el precio de su producto");
 while (error)
 {
     try
     {
-        Console.WriteLine("Por favor ingresa el primer numero:");
-        num1 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Por favor ingresa el segundo numero:");
-        num2 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Por favor ingresa el tercer numero:");
-        num3 = int.Parse(Console.ReadLine());
-        if (num1 > num2 && num1 > num3)
+        Console.WriteLine("Porfavor ingrese el precio de su producto:");
+        num1 = double.Parse(Console.ReadLine());
+        if (num1 > 100)
         {
-            Console.WriteLine("El numero " + num1 + " es el mayor.");
+            num2 = num1 * 0.10;
+            num3 = num1 - num2;
+
+            Console.WriteLine("El precio de su producto es de: " + num3);
         }
-        else if (num2 > num1 && num2 > num3)
+        else
         {
-            Console.WriteLine("El numero " + num2 + " es el mayor.");
+            Console.WriteLine("El precio de su producto es de: " + num1);
         }
-        else if ((num3 > num2) && (num3 > num1))
-        {
-            Console.WriteLine("El numero " + num3 + " es el mayor.");
-        }
-        else 
-        {
-            Console.WriteLine("Todos son iguales");
-        }
-        error= false;
+
+        error = false;
     }
     catch (Exception ex)
     {
